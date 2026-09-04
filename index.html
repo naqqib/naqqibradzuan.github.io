@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Naqqib Bin Radzuan | Professional Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary: #1e293b;
+            --secondary: #2563eb;
+            --bg-light: #f8fafc;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --white: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #cbd5e1;
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .resume-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 3rem 2rem;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--secondary);
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+
+        .contact-info {
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: var(--secondary);
+        }
+
+        .sidebar-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .sidebar-title {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 0 0.4rem 0.6rem 0;
+            font-size: 0.85rem;
+        }
+
+        /* Hack The Box Badge */
+        .htb-badge {
+            background: linear-gradient(135deg, #111827, #1f2937);
+            border: 1px solid #9fef00;
+            border-radius: 8px;
+            padding: 1.2rem;
+            text-align: center;
+            margin-top: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        
+        .htb-badge i {
+            color: #9fef00;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .htb-badge h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .htb-badge p {
+            color: #9fef00;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            padding: 3rem 4rem;
+            background: var(--bg-light);
+        }
+
+        .header-name h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-name h2 {
+            font-size: 1.4rem;
+            color: var(--secondary);
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title i {
+            color: var(--secondary);
+        }
+
+        .item {
+            margin-bottom: 1.5rem;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.3rem;
+        }
+
+        .item-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .item-subtitle {
+            font-size: 1rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-date {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .item p, .item ul {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .item ul {
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .item ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* Certifications formatting */
+        .cert-container {
+            display: flex;
+            align-items: center;
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            gap: 1.5rem;
+        }
+
+        .cert-logo img {
+            width: 60px;
+            height: auto;
+        }
+
+        .cert-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .cert-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .cert-list li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .resume-container {
+                grid-template-columns: 1fr;
+            }
+            .main-content {
+                padding: 2rem;
+            }
+            .item-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar">
+            <img src="cf1281b8-7882-4189-b323-c9507b27bb64.jpg" alt="Muhammad Naqqib Bin Radzuan" class="profile-img">
+            
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> 011-16662548</p>
+                <p><i class="fas fa-envelope"></i> naqqibradzuan11@gmail.com</p>
+                <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/naqqib-radzuan" target="_blank">linkedin.com/in/naqqib-radzuan</a></p>
+            </div>
+
+            <!-- Hack The Box Highlight -->
+            <div class="htb-badge">
+                <i class="fas fa-cube"></i>
+                <h4>Practical Cybersecurity</h4>
+                <p>Hack The Box Level 30</p>
+            </div>
+
+            <br><br>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Core Skills</h3>
+                <h4 style="margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--secondary);">Artificial Intelligence</h4>
+                <div style="margin-bottom: 1.5rem;">
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">LLM Architecture</span>
+                    <span class="skill-tag">NLP</span>
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">Fraud/Anomaly Detection</span>
+                </div>
+                
+                <h4 style="margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--secondary);">Cybersecurity & Cryptography</h4>
+                <div>
+                    <span class="skill-tag">Network & Endpoint Security</span>
+                    <span class="skill-tag">IAM & RBAC</span>
+                    <span class="skill-tag">NIST Frameworks</span>
+                    <span class="skill-tag">Cyber Threat Hunting</span>
+                    <span class="skill-tag">OpenSSL & AES</span>
+                    <span class="skill-tag">Public Key Cryptography</span>
+                    <span class="skill-tag">Blockchain & Data Integrity</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Languages</h3>
+                <p style="margin-bottom: 0.5rem;"><strong>Malay:</strong> Native / Bilingual</p>
+                <p style="margin-bottom: 0.5rem;"><strong>English:</strong> Professional Working</p>
+                <p><strong>French:</strong> Elementary</p>
+            </div>
+        </aside>
+
+        <!-- RIGHT MAIN CONTENT -->
+        <main class="main-content">
+            
+            <div class="header-name">
+                <h1>Muhammad Naqqib<br>Bin Radzuan</h1>
+                <h2>Computer Science (Computing Intelligent) Student</h2>
+            </div>
+
+            <div class="section">
+                <p style="font-size: 1.1rem; color: var(--text-dark); line-height: 1.8;">
+                    3rd-year Computer Science student majoring in Computing Intelligent at Universiti Sains Malaysia (USM). Driven by the intersection of <strong>Artificial Intelligence and Cybersecurity</strong>, with a strong focus on continuous skill growth through industry certifications and hands-on penetration testing. A fast-thinking problem solver who maintains a high-performance lifestyle, successfully balancing rigorous academic computing with competitive endurance sports.
+                </p>
+            </div>
+
+            <!-- Technical Projects Section First -->
+            <div class="section">
+                <h3 class="section-title"><i class="fas fa-code-branch"></i> Key Technical Projects</h3>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">ChiProtector (VHACK 2026)</span>
+                    </div>
+                    <p>Developed an intelligent, real-time Anti-Money Laundering (AML) and fraud detection system. Engineered a LightGBM AI model to analyze transaction velocities and identify suspicious behavioral patterns in milliseconds. Built with a high-performance FastAPI backend and a responsive Tailwind CSS dashboard.</p>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">MYWildGuard (Shell Selamat Sampai Varsity Challenge 2025)</span>
+                    </div>
+                    <p>Created an advanced predictive awareness wildlife-to-driver alert system to prevent vehicle collisions with large animals. Integrated real-time animal tracking technology with a mobile notification ecosystem.</p>
+                </div>
+            </div>
+
+            <!-- Certifications Section -->
+            <div class="section">
+                <h3 class="section-title"><i class="fas fa-certificate"></i> Certifications</h3>
+                <div class="cert-container">
+                    <div class="cert-logo">
+                        <!-- Official IBM SVG Logo placeholder -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM Logo">
+                    </div>
+                    <ul class="cert-list">
+                        <li>Cybersecurity Architecture</li>
+                        <li>Encryption and Cryptography Essentials</li>
+                        <li>Generative AI and LLMs: Architecture and Data Preparation</li>
+                        <li>Introduction to Artificial Intelligence (AI)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Education Section -->
+            <div class="section">
+                <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Education & Academic Achievements</h3>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">Universiti Sains Malaysia (USM)</span>
+                        <span class="item-date">Oct 2024 – Feb 2028</span>
+                    </div>
+                    <div class="item-subtitle">Bachelor’s Degree, Computer Science</div>
+                    <p><strong>Major:</strong> Computing Intelligent (Currently in 3rd Year).</p>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">Penang Matriculation College</span>
+                        <span class="item-date">Sep 2022 – May 2024</span>
+                    </div>
+                    <div class="item-subtitle">Physical Sciences</div>
+                    <ul>
+                        <li><strong>Academics:</strong> Graduated with a 3.92 Final Grade.</li>
+                        <li><strong>Awards:</strong> Best Academic Achievement Award (4.0 GPA) in March 2023.</li>
+                        <li><strong>Leadership:</strong> Peer Assistance Learning (PAL) Physics Leader.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Extras: Athletics & Leadership -->
+            <div class="section">
+                <h3 class="section-title"><i class="fas fa-running"></i> Leadership & Athletic Achievements</h3>
+                
+                <div class="item">
+                    <ul>
+                        <li><strong>Student Leadership:</strong> Leader of the Sports Executive Committee for AMLIS USM (2025–2026).</li>
+                        <li><strong>Endurance Swimming:</strong> 9th Place at the OCEANMAN Maafushi Maldives 2026 Sprint (Master 20-29); earned a qualification slot for the OCEANMAN World Final Championship.</li>
+                        <li><strong>Triathlon / Multisport:</strong> 12th Place at the 113 Series Putrajaya Aquathlon Standard (16-29 category) in February 2026.</li>
+                        <li><strong>Tennis:</strong> Men’s Tennis Runner-Up for Aman Damai USM (Jan 2026); Varsity Tennis Player.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
