@@ -3,420 +3,422 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Naqqib Bin Radzuan | Professional Resume</title>
+    <title>Muhammad Naqqib | Computing Intelligent Portfolio</title>
+    <!-- Add FontAwesome and a clean, modern font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-
         :root {
-            --primary: #1e293b;
-            --secondary: #2563eb;
-            --bg-light: #f8fafc;
-            --text-dark: #0f172a;
-            --text-muted: #475569;
-            --white: #ffffff;
-            --border: #e2e8f0;
+            --primary-blue: #2563EB; /* Original Blue */
+            --accent-green: #22C55E; /* Modern Green */
+            --accent-gold: #FACC15; /* Athletic Gold */
+            --bg-dark: #0F172A; /* Deep Dark */
+            --bg-card: #1E293B; /* Lighter Card */
+            --text-light: #F8FAFC;
+            --text-muted: #94A3B8;
+            --border: rgba(148, 163, 184, 0.1);
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: #cbd5e1;
-            color: var(--text-dark);
-            line-height: 1.6;
-            padding: 2rem 1rem;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.7;
         }
 
-        .resume-container {
-            max-width: 1100px;
+        h1, h2, h3, .heading-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+        ul { list-style: none; }
+
+        /* Core Layout Components */
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
-            background: var(--white);
+            padding: 2rem;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-header i { font-size: 2rem; color: var(--primary-blue); }
+        .section-header h2 { font-size: 2.5rem; color: var(--text-light); font-weight: 700; }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            overflow: hidden;
-            display: grid;
-            grid-template-columns: 320px 1fr;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
 
-        /* Sidebar Styling */
-        .sidebar {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 3rem 2rem;
+        /* --- HERO SECTION --- */
+        #hero {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            padding: 8rem 0;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 50%; height: 100%;
+            background: radial-gradient(circle at center, rgba(37, 99, 235, 0.1), transparent 60%);
+            z-index: -1;
         }
 
+        .hero-left { text-align: center; }
         .profile-img {
-            width: 200px;
-            height: 200px;
+            width: 250px; height: 250px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid var(--secondary);
-            margin: 0 auto 1.5rem;
-            display: block;
-        }
-
-        .contact-info {
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
-        }
-
-        .contact-info p {
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .contact-info a {
-            color: var(--white);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-info a:hover {
-            color: var(--secondary);
-        }
-
-        .sidebar-section {
-            margin-bottom: 2.5rem;
-        }
-
-        .sidebar-title {
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 2px solid var(--secondary);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .skill-tag {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.4rem 0.8rem;
-            border-radius: 4px;
-            display: inline-block;
-            margin: 0 0.4rem 0.6rem 0;
-            font-size: 0.85rem;
-        }
-
-        /* Hack The Box Badge */
-        .htb-badge {
-            background: linear-gradient(135deg, #111827, #1f2937);
-            border: 1px solid #9fef00;
-            border-radius: 8px;
-            padding: 1.2rem;
-            text-align: center;
-            margin-top: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        }
-        
-        .htb-badge i {
-            color: #9fef00;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .htb-badge h4 {
-            color: var(--white);
-            font-size: 1.1rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .htb-badge p {
-            color: #9fef00;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        /* Main Content Styling */
-        .main-content {
-            padding: 3rem 4rem;
-            background: var(--bg-light);
-        }
-
-        .header-name h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary);
-            line-height: 1.1;
-            margin-bottom: 0.5rem;
-        }
-
-        .header-name h2 {
-            font-size: 1.4rem;
-            color: var(--secondary);
-            font-weight: 400;
-            margin-bottom: 2rem;
-        }
-
-        .section {
-            margin-bottom: 2.5rem;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 0.5rem;
+            border: 5px solid var(--primary-blue);
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
             margin-bottom: 1.5rem;
         }
 
-        .section-title i {
-            color: var(--secondary);
-        }
-
-        .item {
-            margin-bottom: 1.5rem;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.3rem;
-        }
-
-        .item-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .item-subtitle {
-            font-size: 1rem;
-            color: var(--secondary);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .item-date {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-weight: 600;
-        }
-
-        .item p, .item ul {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .item ul {
-            padding-left: 1.2rem;
-            margin-top: 0.5rem;
-        }
-
-        .item ul li {
-            margin-bottom: 0.4rem;
-        }
-
-        /* Certifications formatting */
-        .cert-container {
-            display: flex;
-            align-items: center;
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            gap: 1.5rem;
-        }
-
-        .cert-logo img {
-            width: 60px;
-            height: auto;
-        }
-
-        .cert-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+        .hero-right h1 { font-size: 4rem; font-weight: 700; color: var(--text-light); margin-bottom: 0.5rem; line-height: 1.1; }
+        .hero-right h2 { font-size: 1.8rem; font-weight: 500; color: var(--text-muted); margin-bottom: 2rem; }
         
-        .cert-list li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-            font-weight: 500;
+        .contact-info-hero {
+            display: flex; flex-wrap: wrap; gap: 1rem;
+            font-size: 0.95rem; color: var(--text-muted);
+            margin-bottom: 2.5rem;
         }
+        .contact-info-hero span { display: flex; align-items: center; gap: 8px; }
+        .contact-info-hero i { color: var(--primary-blue); font-size: 1.1rem; }
+        .contact-info-hero a:hover { color: var(--primary-blue); }
 
-        .cert-list li::before {
-            content: "\f058";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            color: var(--secondary);
-            position: absolute;
-            left: 0;
-            top: 2px;
+        .htb-badge-hero {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), var(--bg-card));
+            border: 1px solid var(--accent-green);
+            color: var(--accent-green);
+            padding: 0.75rem 1.5rem; border-radius: 99px;
+            font-weight: 600; font-size: 1rem;
+            cursor: pointer; transition: all 0.3s ease;
         }
+        .htb-badge-hero:hover { background: rgba(34, 197, 94, 0.3); border-color: rgba(34, 197, 94, 0.5); transform: translateY(-3px); }
+        .htb-badge-hero i { font-size: 1.3rem; }
 
-        /* Responsive Design */
-        @media (max-width: 900px) {
-            .resume-container {
-                grid-template-columns: 1fr;
-            }
-            .main-content {
-                padding: 2rem;
-            }
-            .item-header {
-                flex-direction: column;
-            }
+        .academic-pills { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.5rem; }
+        .academic-pill { background-color: rgba(148, 163, 184, 0.1); color: var(--text-muted); padding: 0.4rem 1rem; border-radius: 99px; font-size: 0.85rem; font-weight: 500; border: 1px solid var(--border); }
+
+        /* --- PORTFOLIO SECTION (CORE FIELD FIRST) --- */
+        #portfolio { padding: 8rem 0; }
+        .portfolio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+        .project-card { position: relative; overflow: hidden; padding-bottom: 6rem; /* extra space for the button */ }
+        .project-title { font-size: 1.8rem; color: var(--text-light); margin-bottom: 0.5rem; font-weight: 600; }
+        .project-details { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+        .project-stack { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 2rem; }
+        .stack-pill { background-color: rgba(37, 99, 235, 0.1); color: var(--primary-blue); padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; border: 1px solid rgba(37, 99, 235, 0.2); }
+        
+        .project-card .btn { position: absolute; bottom: 2.5rem; right: 2.5rem; }
+
+        /* --- SKILLS SECTION --- */
+        #skills { padding: 8rem 0; border-top: 1px solid var(--border); }
+        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        
+        .skills-card h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--text-light); display: flex; align-items: center; gap: 10px; }
+        .skills-card h3 i { color: var(--primary-blue); }
+        .skills-list { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem; }
+        .skills-item { display: inline-flex; align-items: center; gap: 8px; background-color: rgba(148, 163, 184, 0.05); color: var(--text-muted); padding: 0.6rem 1.2rem; border-radius: 8px; border: 1px solid var(--border); font-size: 0.95rem; font-weight: 500; }
+        
+        /* Language Section - More Attractive Grid */
+        .language-item { background-color: var(--bg-dark); border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+        .language-item.malay { grid-area: language-malay; }
+        .language-item.english { grid-area: language-english; }
+        .language-item.french { grid-area: language-french; }
+        
+        .language-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem; grid-template-areas: 'language-malay language-english language-french'; }
+        .language-item i { font-size: 2rem; margin-bottom: 0.5rem; }
+        .malay i { color: #f97316; } .english i { color: #3b82f6; } .french i { color: #10b981; }
+        .lang-level { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+
+        /* --- ATHELETIC & COMMUNITY --- */
+        #athletics { padding: 8rem 0; border-top: 1px solid var(--border); }
+        .athletics-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .athletics-card { text-align: center; }
+        .athletics-card i { font-size: 3rem; color: var(--accent-gold); margin-bottom: 1rem; }
+        .athletics-card h4 { font-size: 1.2rem; margin-bottom: 0.3rem; }
+        .athletics-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* --- CONTACT & FOOTER --- */
+        #contact-footer { padding: 4rem 0; border-top: 1px solid var(--border); text-align: center; }
+        #contact-footer p { font-size: 1.2rem; margin-bottom: 2rem; }
+        
+        .footer-logo { font-size: 2rem; font-weight: 700; color: var(--text-light); margin-bottom: 0.5rem; }
+        .footer-tagline { color: var(--text-muted); margin-bottom: 2rem; font-size: 1rem; font-weight: 300; }
+        
+        .final-socials { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2.5rem; }
+        .final-socials a { font-size: 1.8rem; color: var(--text-muted); }
+        .final-socials a:hover { color: var(--primary-blue); }
+        
+        .final-contact { font-size: 1.2rem; color: var(--text-light); }
+        .final-contact span { font-weight: 600; color: var(--primary-blue); margin-right: 1rem; }
+        
+        .copyright { color: var(--text-muted); font-size: 0.9rem; margin-top: 3rem; }
+        
+        /* Modern Buttons */
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: all 0.3s ease; }
+        .btn-primary { background-color: var(--primary-blue); color: var(--text-light); border: none; }
+        .btn-primary:hover { background-color: #1E40AF; transform: translateY(-3px); }
+        
+        .btn-secondary { background-color: rgba(37, 99, 235, 0.1); color: var(--primary-blue); border: 1px solid rgba(37, 99, 235, 0.2); }
+        .btn-secondary:hover { background-color: rgba(37, 99, 235, 0.2); transform: translateY(-3px); }
+        
+        /* Interactive Scrolling Indicators - Clean and Nice */
+        .scroll-top { position: fixed; bottom: 2rem; right: 2rem; background-color: var(--primary-blue); color: var(--text-light); padding: 0.8rem 1rem; border-radius: 50%; opacity: 0; pointer-events: none; transition: opacity 0.3s ease, pointer-events 0.3s ease; }
+        .scroll-top.visible { opacity: 1; pointer-events: auto; }
+        .scroll-top i { font-size: 1.2rem; }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            #hero { flex-direction: column; text-align: center; gap: 2rem; padding: 6rem 0; }
+            .hero-right h1 { font-size: 3.2rem; }
+            .contact-info-hero { justify-content: center; }
+            .portfolio-grid, .skills-grid { grid-template-columns: 1fr; }
+            .section-header h2 { font-size: 2rem; }
+        }
+        @media (max-width: 768px) {
+            .container { padding: 1.5rem; }
+            .language-grid { grid-template-columns: 1fr; grid-template-areas: 'language-malay' 'language-english' 'language-french'; }
+            #athletics .card { padding: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="resume-container">
-        <!-- LEFT SIDEBAR -->
-        <aside class="sidebar">
-            <img src="cf1281b8-7882-4189-b323-c9507b27bb64.jpg" alt="Muhammad Naqqib Bin Radzuan" class="profile-img">
-            
-            <div class="contact-info">
-                <p><i class="fas fa-phone"></i> 011-16662548</p>
-                <p><i class="fas fa-envelope"></i> naqqibradzuan11@gmail.com</p>
-                <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/naqqib-radzuan" target="_blank">linkedin.com/in/naqqib-radzuan</a></p>
-            </div>
+    <!-- Scroll to Top Indicator -->
+    <a href="#hero" class="scroll-top" id="scroll-top-btn" title="Back to Top"><i class="fas fa-chevron-up"></i></a>
 
-            <!-- Hack The Box Highlight -->
-            <div class="htb-badge">
-                <i class="fas fa-cube"></i>
-                <h4>Practical Cybersecurity</h4>
-                <p>Hack The Box Level 30</p>
-            </div>
-
-            <br><br>
-
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">Core Skills</h3>
-                <h4 style="margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--secondary);">Artificial Intelligence</h4>
-                <div style="margin-bottom: 1.5rem;">
-                    <span class="skill-tag">Machine Learning</span>
-                    <span class="skill-tag">LLM Architecture</span>
-                    <span class="skill-tag">NLP</span>
-                    <span class="skill-tag">PyTorch</span>
-                    <span class="skill-tag">Fraud/Anomaly Detection</span>
-                </div>
-                
-                <h4 style="margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--secondary);">Cybersecurity & Cryptography</h4>
-                <div>
-                    <span class="skill-tag">Network & Endpoint Security</span>
-                    <span class="skill-tag">IAM & RBAC</span>
-                    <span class="skill-tag">NIST Frameworks</span>
-                    <span class="skill-tag">Cyber Threat Hunting</span>
-                    <span class="skill-tag">OpenSSL & AES</span>
-                    <span class="skill-tag">Public Key Cryptography</span>
-                    <span class="skill-tag">Blockchain & Data Integrity</span>
+    <!-- --- HERO SECTION --- -->
+    <section id="hero">
+        <div class="container container-hero">
+            <div class="hero-left">
+                <!-- IMPORTANT: Retain this image name and location -->
+                <img src="cf1281b8-7882-4189-b323-c9507b27bb64.jpg" alt="Muhammad Naqqib Bin Radzuan" class="profile-img">
+                <div class="contact-info-hero">
+                    <span><i class="fas fa-phone"></i> 011-16662548</span>
+                    <span><i class="fas fa-envelope"></i> naqqibradzuan11@gmail.com</span>
+                    <span><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/naqqib-radzuan" target="_blank">linkedin.com/in/naqqib-radzuan</a></span>
                 </div>
             </div>
-
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">Languages</h3>
-                <p style="margin-bottom: 0.5rem;"><strong>Malay:</strong> Native / Bilingual</p>
-                <p style="margin-bottom: 0.5rem;"><strong>English:</strong> Professional Working</p>
-                <p><strong>French:</strong> Elementary</p>
-            </div>
-        </aside>
-
-        <!-- RIGHT MAIN CONTENT -->
-        <main class="main-content">
-            
-            <div class="header-name">
+            <div class="hero-right">
                 <h1>Muhammad Naqqib<br>Bin Radzuan</h1>
                 <h2>Computer Science (Computing Intelligent) Student</h2>
-            </div>
-
-            <div class="section">
-                <p style="font-size: 1.1rem; color: var(--text-dark); line-height: 1.8;">
-                    3rd-year Computer Science student majoring in Computing Intelligent at Universiti Sains Malaysia (USM). Driven by the intersection of <strong>Artificial Intelligence and Cybersecurity</strong>, with a strong focus on continuous skill growth through industry certifications and hands-on penetration testing. A fast-thinking problem solver who maintains a high-performance lifestyle, successfully balancing rigorous academic computing with competitive endurance sports.
+                <p style="margin-bottom: 2rem; color: var(--text-light); font-size: 1.1rem; line-height: 1.8;">
+                    I am a 3rd-year Computer Science student specializing in Computing Intelligent at Universiti Sains Malaysia (USM). I am driven by the intersection of Artificial Intelligence and Cybersecurity, focusing on robust problem-solving through continuous skill growth, industry certifications, and practical penetration testing.
                 </p>
+                <div style="display: flex; gap: 1rem; justify-content: flex-start; align-items: center; margin-bottom: 1.5rem;">
+                    <a href="#portfolio" class="btn btn-primary"><i class="fas fa-code-branch"></i> View Technical Works</a>
+                    <!-- A new visible, clickable HTB level badge -->
+                    <a href="https://hackthebox.com/achievement/profile/30" target="_blank" class="htb-badge-hero"><i class="fas fa-cube"></i> HTB LEVEL 30</a>
+                </div>
+                <div class="academic-pills">
+                    <span class="academic-pill">Physical Sciences | Matriculation CGPA 3.92</span>
+                    <span class="academic-pill">Leader Peer Assistance Learning (Physics)</span>
+                    <span class="academic-pill">Best Academic Achievement Award</span>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Technical Projects Section First -->
-            <div class="section">
-                <h3 class="section-title"><i class="fas fa-code-branch"></i> Key Technical Projects</h3>
+    <!-- --- TECHNICAL PORTFOLIO (SHOWCASE FIELD FIRST) --- -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <i class="fas fa-code-branch"></i>
+                <h2>Technical Portfolio</h2>
+            </div>
+            <div class="portfolio-grid">
+                <!-- ChiProtector -->
+                <div class="card project-card">
+                    <h3 class="project-title">ChiProtector</h3>
+                    <div class="project-details">Real-time Anti-Money Laundering (AML) & Fraud Detection System | VHACK 2026</div>
+                    <div class="project-stack">
+                        <span class="stack-pill">Machine Learning</span>
+                        <span class="stack-pill">Artificial Intelligence</span>
+                        <span class="stack-pill">LightGBM</span>
+                        <span class="stack-pill">FastAPI</span>
+                        <span class="stack-pill">Tailwind CSS Dashboard</span>
+                    </div>
+                    <p>Engineered an intelligent fraud prediction system. The core LightGBM model processes live transaction data in milliseconds, identifying suspicious behavioral patterns and assigning risk scores to enable immediate proactive intervention.</p>
+                </div>
                 
-                <div class="item">
-                    <div class="item-header">
-                        <span class="item-title">ChiProtector (VHACK 2026)</span>
+                <!-- MYWildGuard -->
+                <div class="card project-card">
+                    <h3 class="project-title">MYWildGuard</h3>
+                    <div class="project-details">Mobile Wildlife-to-Driver Alert System | Shell Selamat Sampai Varsity Challenge 2025</div>
+                    <div class="project-stack">
+                        <span class="stack-pill">Predictive Awareness</span>
+                        <span class="stack-pill">Artificial Intelligence</span>
+                        <span class="stack-pill">Mobile Development</span>
+                        <span class="stack-pill">Real-time Tracking</span>
                     </div>
-                    <p>Developed an intelligent, real-time Anti-Money Laundering (AML) and fraud detection system. Engineered a LightGBM AI model to analyze transaction velocities and identify suspicious behavioral patterns in milliseconds. Built with a high-performance FastAPI backend and a responsive Tailwind CSS dashboard.</p>
-                </div>
-
-                <div class="item">
-                    <div class="item-header">
-                        <span class="item-title">MYWildGuard (Shell Selamat Sampai Varsity Challenge 2025)</span>
-                    </div>
-                    <p>Created an advanced predictive awareness wildlife-to-driver alert system to prevent vehicle collisions with large animals. Integrated real-time animal tracking technology with a mobile notification ecosystem.</p>
+                    <p>Developed an advanced notification ecosystem aimed at preventing vehicle collisions with large animals. Integrated a live animal tracking module with predictive algorithms to push real-time, location-based alerts directly to drivers.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Certifications Section -->
-            <div class="section">
-                <h3 class="section-title"><i class="fas fa-certificate"></i> Certifications</h3>
-                <div class="cert-container">
-                    <div class="cert-logo">
-                        <!-- Official IBM SVG Logo placeholder -->
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM Logo">
+    <!-- --- SKILLS SECTION --- -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <i class="fas fa-puzzle-piece"></i>
+                <h2>Competencies</h2>
+            </div>
+            <div class="skills-grid">
+                <!-- Technical Skills -->
+                <div class="card skills-card">
+                    <h3><i class="fas fa-robot"></i> Artificial Intelligence</h3>
+                    <div class="skills-list">
+                        <span class="skills-item">Machine Learning</span>
+                        <span class="skills-item">LLM Architecture</span>
+                        <span class="skills-item">NLP</span>
+                        <span class="skills-item">PyTorch</span>
+                        <span class="skills-item">Anomaly Detection</span>
                     </div>
-                    <ul class="cert-list">
-                        <li>Cybersecurity Architecture</li>
-                        <li>Encryption and Cryptography Essentials</li>
-                        <li>Generative AI and LLMs: Architecture and Data Preparation</li>
-                        <li>Introduction to Artificial Intelligence (AI)</li>
-                    </ul>
+                    <br>
+                    <h3><i class="fas fa-fingerprint"></i> Cybersecurity</h3>
+                    <div class="skills-list">
+                        <span class="skills-item">Penetration Testing</span>
+                        <span class="skills-item">Endpoint Security</span>
+                        <span class="skills-item">NIST Frameworks</span>
+                        <span class="skills-item">Cyber Threat Hunting</span>
+                        <span class="skills-item">Encryption & Cryptography</span>
+                    </div>
+                </div>
+
+                <!-- CERTIFICATIONS & LANGUAGES -->
+                <div class="card skills-card">
+                    <h3><i class="fas fa-medal"></i> Industry Certifications</h3>
+                    <div class="skills-list" style="flex-direction: column; align-items: flex-start;">
+                        <span class="skills-item"><i class="fas fa-certificate" style="color: var(--primary-blue);"></i> practical cybersecurity training (Hack The Box Level 30)</span>
+                        <span class="skills-item"><i class="fas fa-certificate" style="color: var(--accent-gold);"></i> IBM Cybersecurity Architecture</span>
+                        <span class="skills-item"><i class="fas fa-certificate" style="color: var(--accent-green);"></i> IBM Encryption and Cryptography Essentials</span>
+                        <span class="skills-item"><i class="fas fa-certificate" style="color: var(--accent-gold);"></i> IBM Generative AI and LLMs</span>
+                        <span class="skills-item"><i class="fas fa-certificate" style="color: var(--primary-blue);"></i> IBM Introduction to Artificial Intelligence (AI)</span>
+                    </div>
+                    
+                    <br>
+                    <h3><i class="fas fa-language"></i> Language Fluency</h3>
+                    <div class="language-grid">
+                        <div class="language-item malay">
+                            <i class="fas fa-flag"></i>
+                            <h4>Malay</h4>
+                            <span class="lang-level">Native</span>
+                        </div>
+                        <div class="language-item english">
+                            <i class="fas fa-globe-americas"></i>
+                            <h4>English</h4>
+                            <span class="lang-level">Professional Working</span>
+                        </div>
+                        <div class="language-item french">
+                            <i class="fas fa-flag-usa" style="transform: rotate(180deg); opacity: 0.1;"></i> <!-- placeholder for non-standard icon -->
+                            <i class="fas fa-book" style="opacity: 0.5;"></i>
+                            <h4>French</h4>
+                            <span class="lang-level">Elementary</span>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Education Section -->
-            <div class="section">
-                <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Education & Academic Achievements</h3>
-                
-                <div class="item">
-                    <div class="item-header">
-                        <span class="item-title">Universiti Sains Malaysia (USM)</span>
-                        <span class="item-date">Oct 2024 – Feb 2028</span>
-                    </div>
-                    <div class="item-subtitle">Bachelor’s Degree, Computer Science</div>
-                    <p><strong>Major:</strong> Computing Intelligent (Currently in 3rd Year).</p>
+    <!-- --- ATHELETIC BALANCE SECTION --- -->
+    <section id="athletics">
+        <div class="container">
+            <div class="section-header">
+                <i class="fas fa-bolt"></i>
+                <h2>High-Performance Balance</h2>
+            </div>
+            <div class="card" style="padding: 3rem; margin-bottom: 2rem;">
+                <p style="color: var(--text-light); font-size: 1.15rem; line-height: 1.8; text-align: center;">
+                    "I actively maintain a high-performance lifestyle, balanced by competitive endurance sports and community leadership. I believe that rigorous academic computing demands physical resilience, successfully balancing complex system design with elite marathon swimming and community engagement."
+                </p>
+                <div style="text-align: center; color: var(--accent-gold); font-weight: 600; margin-top: 1rem;">— Muhammad Naqqib Bin Radzuan</div>
+            </div>
+            <div class="athletics-container">
+                <div class="card athletics-card">
+                    <i class="fas fa-swimmer"></i>
+                    <h4>OCEANMAN Maldives Sprint 2026</h4>
+                    <p>9th Place Category Finish | Qualified for World Final Championship (April 2026)</p>
                 </div>
-
-                <div class="item">
-                    <div class="item-header">
-                        <span class="item-title">Penang Matriculation College</span>
-                        <span class="item-date">Sep 2022 – May 2024</span>
-                    </div>
-                    <div class="item-subtitle">Physical Sciences</div>
-                    <ul>
-                        <li><strong>Academics:</strong> Graduated with a 3.92 Final Grade.</li>
-                        <li><strong>Awards:</strong> Best Academic Achievement Award (4.0 GPA) in March 2023.</li>
-                        <li><strong>Leadership:</strong> Peer Assistance Learning (PAL) Physics Leader.</li>
-                    </ul>
+                <div class="card athletics-card">
+                    <i class="fas fa-running"></i>
+                    <h4>KLSCM 2026 Half Marathon</h4>
+                    <p>Competitive distance runner</p>
+                </div>
+                <div class="card athletics-card">
+                    <i class="fas fa-users-viewfinder"></i>
+                    <h4>Sports Executive Committee</h4>
+                    <p>Leader for AMLIS USM School of Computer Sciences (2025/2026)</p>
+                </div>
+                <div class="card athletics-card">
+                    <i class="fas fa-handshake"></i>
+                    <h4>PAL Physics Leader</h4>
+                    <p>Leadership in Penang Matriculation College PAL system</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Extras: Athletics & Leadership -->
-            <div class="section">
-                <h3 class="section-title"><i class="fas fa-running"></i> Leadership & Athletic Achievements</h3>
-                
-                <div class="item">
-                    <ul>
-                        <li><strong>Student Leadership:</strong> Leader of the Sports Executive Committee for AMLIS USM (2025–2026).</li>
-                        <li><strong>Endurance Swimming:</strong> 9th Place at the OCEANMAN Maafushi Maldives 2026 Sprint (Master 20-29); earned a qualification slot for the OCEANMAN World Final Championship.</li>
-                        <li><strong>Triathlon / Multisport:</strong> 12th Place at the 113 Series Putrajaya Aquathlon Standard (16-29 category) in February 2026.</li>
-                        <li><strong>Tennis:</strong> Men’s Tennis Runner-Up for Aman Damai USM (Jan 2026); Varsity Tennis Player.</li>
-                    </ul>
-                </div>
+    <!-- --- CONTACT & FOOTER --- -->
+    <section id="contact-footer">
+        <div class="container">
+            <p style="font-weight: 300;">Interested in my skill set for Computing Intelligent, Cybersecurity, or high-performance projects?</p>
+            <div class="footer-logo">MNR</div>
+            <p class="footer-tagline">Muhammad Naqqib Bin Radzuan | USM Computing Intelligent | AI & Security Analyst</p>
+            
+            <div class="final-socials">
+                <a href="https://linkedin.com/in/naqqib-radzuan" target="_blank" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:naqqibradzuan11@gmail.com" title="Send Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/naqqib" target="_blank" title="GitHub Repository"><i class="fab fa-github"></i></a>
+                <a href="https://naqqib.github.io" target="_blank" title="Portfolio Website (Free Host)"><i class="fas fa-link"></i></a>
             </div>
+            
+            <div class="final-contact">
+                <span>Direct Contact</span> 011-16662548
+            </div>
+            
+            <p class="copyright">&copy; 2026 Muhammad Naqqib Bin Radzuan. All technical and athletic achievements verified.</p>
+        </div>
+    </section>
 
-        </main>
-    </div>
-
+    <!-- Basic Scroll-to-Top Interaction Script -->
+    <script>
+        window.addEventListener('scroll', function() {
+            var scrollBtn = document.getElementById('scroll-top-btn');
+            if (window.pageYOffset > 400) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+    </script>
 </body>
 </html>
